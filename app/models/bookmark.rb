@@ -5,4 +5,6 @@ class Bookmark < ApplicationRecord
   validates :list, :movie, presence: true
   validates :comment, presence: true, length: { minimum: 6 }
   validates :movie, uniqueness: { scope: :list }
+
+  has_one_attached :photo
 end
